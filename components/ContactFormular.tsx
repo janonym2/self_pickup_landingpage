@@ -1,3 +1,5 @@
+"use client"
+
 export default function ContactFormular() {
   const handleSubmit = () => {
     if (typeof window.gtag !== "undefined") {
