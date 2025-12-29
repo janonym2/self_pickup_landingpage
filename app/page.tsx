@@ -13,7 +13,7 @@ export default async function HomePage() {
     <div>
       <main className="px-[5%] md:px-[15%] my-20 space-y-10">
         <section>
-          <h1 className="text-3xl md:text-4xl font-bold text-[var(--accent)] mb-4">Willkommen</h1>
+          <h1 className="text-3xl md:text-4xl font-bold text-[var(--accent)] mb-4">Bierzeltgarnituren mieten in Essen</h1>
           <section>
             <p className='font-sans'>
               Du planst ein Fest, eine Party oder ein gemütliches Beisammensein im Freien? Bei uns kannst du unkompliziert Bierzeltgarnituren mieten – ganz ohne Lieferstress.
