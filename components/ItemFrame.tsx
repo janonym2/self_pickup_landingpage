@@ -4,10 +4,6 @@ import { useState } from "react";
 import Image from 'next/image';
 import { useRouter } from "next/navigation";
 
-const addToCart = () => {
-    //
-};
-
 export function ItemFrame() {
     const [quantity, setQuantity] = useState(4);
     const router = useRouter();
@@ -58,7 +54,17 @@ export function ItemFrame() {
                     
                     <button
                         type="button"
-                        onClick={() => addToCart()}
+                        onClick={() => {
+                            if (typeof window.gtag !== "undefined") {
+                            window.gtag('event', 'interesse_anfrage', {
+                                quantity: quantity,
+                                button_name: 'Jetzt anfragen'
+                            });
+                            }
+
+                            router.push('/');
+                        }}
+
                         className="text-white px-6 py-2 font-bold shadow transition bg-[var(--accent)] hover:bg-[var(--accent-2)]"
                     >
                         Jetzt anfragen

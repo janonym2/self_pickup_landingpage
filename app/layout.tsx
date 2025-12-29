@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Banner from "@/components/Banner";
+import CookieBanner from "@/components/CookieBanner"
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -40,6 +41,7 @@ export default function RootLayout({
         <Navbar pPhone='00491772247053' pEmail='jan-hendricks@outlook.de' />
         <Banner content={`Bierzeltgarnituren mieten \n in Essen`} contentMobile='Bierzeltgarnituren mieten' />
         <main>{children}</main>
+        <CookieBanner />
         <Footer />
       </body>
     </html>
