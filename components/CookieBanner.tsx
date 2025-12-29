@@ -2,11 +2,21 @@
 
 import { useState, useEffect } from "react"
 import Script from "next/script"
+import TestUserMarker from '@/components/ga/TestUserMarker';
 
 export default function CookieBanner() {
-  const [consent, setConsent] = useState(false)
-  const [showBanner, setShowBanner] = useState(false)
-  const [showSettings, setShowSettings] = useState(false)
+  const [consent, setConsent] = useState(false);
+  const [showBanner, setShowBanner] = useState(false);
+  const [showSettings, setShowSettings] = useState(false);
+  const [isTestUser, setIsTestUser] = useState(false);
+
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    if (params.get('test_user') === '1' || document.cookie.includes('test_user=1')) {
+      setIsTestUser(true);
+    }
+  }, []);
+
 
   useEffect(() => {
     const saved = localStorage.getItem("cookie-consent")
@@ -15,20 +25,20 @@ export default function CookieBanner() {
     } else {
       setShowBanner(true)
     }
-  }, [])
+  }, []);
 
   const acceptAll = () => {
     localStorage.setItem("cookie-consent", "true")
     setConsent(true)
     setShowBanner(false)
-  }
+  };
 
   const acceptFunctionalOnly = () => {
     localStorage.setItem("cookie-consent", "functional-only")
     setConsent(false)
     setShowBanner(false)
     setShowSettings(false)
-  }
+  };
 
   return (
     <>
@@ -159,7 +169,7 @@ export default function CookieBanner() {
       )}
 
       {/* Google Analytics nur bei vollem Consent */}
-      {consent && (
+      {consent && !isTestUser && (
         <>
           <Script src="https://www.googletagmanager.com/gtag/js?id=G-T7HF8RNRZV" strategy="afterInteractive" />
           <Script id="google-analytics" strategy="afterInteractive">
@@ -172,6 +182,7 @@ export default function CookieBanner() {
           </Script>
         </>
       )}
+
     </>
-  )
+  );
 }
