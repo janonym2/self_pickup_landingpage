@@ -49,7 +49,7 @@ export default function Navbar({ pPhone, pEmail}: NavbarProps) {
             alt="Brandname"
             width={3200}
             height={800}
-            className="h-[50%] w-auto"
+            className="h-[40%] w-auto"
             onClick={() => router.push("/")}
           />
 
