@@ -89,7 +89,7 @@ export default function Navbar({ pPhone, pEmail}: NavbarProps) {
             </ul>
             <ul
               className={`flex gap-6 font-bold mt-2 justify-end transition-all duration-300 ${
-                isSmall ? "translate-y-[-20px] text-sm" : "text-base"
+                isSmall ? "translate-y-[-20px] text-lg" : "text-sm"
               }`}
             >
               <li>
