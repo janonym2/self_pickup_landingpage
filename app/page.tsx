@@ -37,7 +37,7 @@ export default async function HomePage() {
         <ItemFrame />
 
         <br />
-        <Banner content='Einfach & unkompliziert' />
+        <Banner content={`Einfach & \nunkompliziert`} />
         <br />
         <ContactFormular />
       </main>
