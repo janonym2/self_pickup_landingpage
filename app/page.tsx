@@ -20,7 +20,7 @@ export default async function HomePage() {
               Du planst ein Fest, eine Party oder ein gemütliches Beisammensein im Freien? Bei uns kannst du unkompliziert Bierzeltgarnituren mieten – ganz ohne Lieferstress.
             </p><br /><br />
 
-            <HowItWorks />
+            <HowItWorks /><br />
 
             <p className='font-sans'>
               Jetzt Bierzeltgarnitur auswählen, in den Warenkorb legen und dein Event starten!
@@ -29,8 +29,9 @@ export default async function HomePage() {
 
             
         </section>
+        <br />
         <ItemFrame />
-
+        
         <br />
         <Banner content={`Einfach & \nunkompliziert`} />
         <br />

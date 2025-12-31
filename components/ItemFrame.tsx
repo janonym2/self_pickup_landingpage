@@ -17,9 +17,9 @@ export function ItemFrame() {
     const optionsArr = toArray(8);
 
     return (
-        <div>
+        <div className="bg-[#f7f9fc] border-t-8 border-[var(--accent)] p-8">
                 <div className="p-4 flex flex-col items-center text-center space-y-4 max-w-sm mx-auto">
-                    <h2 className="text-xl md:text-2xl font-bold mb-4">Bierzeltgarnitur</h2>
+                    <h2 className="text-3xl md:text-4xl font-bold text-[var(--accent)] mb-8">Bierzeltgarnitur</h2>
                     
                     <Image 
                         src={'/images/bierzeltgarnitur.jpg'} 
@@ -33,11 +33,12 @@ export function ItemFrame() {
                     
                     <p className="text-sm">Preis: 12,00€</p>
                     
-                    
-                    <div className="w-full">
-                        <label className="block text-sm mb-1" htmlFor="quantity">
-                            Menge:
-                        </label>
+
+                    <div className="w-full max-w-sm space-y-4">
+                        <div>
+                            <label className="block text-sm mb-1" htmlFor="quantity">
+                                Menge:
+                            </label>
                     
                             <select
                                 name="quantity"
@@ -49,26 +50,27 @@ export function ItemFrame() {
                                     <option key={num} value={num}>{num}</option>
                                 ))}
                             </select>
-                        
-                    </div>
-                    
-                    <button
-                        type="button"
-                        onClick={() => {
+                        </div>
+
+                        <button
+                            type="button"
+                            onClick={() => {
                             if (typeof window.gtag !== "undefined") {
-                            window.gtag('event', 'interesse_anfrage', {
+                                window.gtag('event', 'interesse_anfrage', {
                                 quantity: quantity,
                                 button_name: 'Jetzt anfragen'
-                            });
+                                });
                             }
-
                             router.push('/');
-                        }}
+                            }}
+                            className="w-full text-white px-6 py-2 mt-2 font-bold shadow transition bg-[var(--accent)] hover:bg-[var(--accent-2)]"
+                        >
+                            Jetzt anfragen
+                        </button>
+                    </div>
 
-                        className="text-white px-6 py-2 font-bold shadow transition bg-[var(--accent)] hover:bg-[var(--accent-2)]"
-                    >
-                        Jetzt anfragen
-                    </button>
+                    
+                    
                 </div>    
             
         </div>
