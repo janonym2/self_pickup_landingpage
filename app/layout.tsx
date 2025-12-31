@@ -17,14 +17,16 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Bench.ly",
+  metadataBase: new URL("https://bench-ly.vercel.app"),
+  title: {
+    default: "Bench.ly",
+    template: "%s | Bench.ly",
+  },
   description: "Miete Bierzeltgarnituren",
   icons: {
     icon: "/images/favicon.png",
-    other: [
-      { url: "/images/logo.svg", sizes: "385x385", type: "image/png" },
-    ]
-  }
+    apple: "/images/favicon.png",
+  },
 };
 
 export default function RootLayout({
